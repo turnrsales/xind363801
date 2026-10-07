@@ -1,0 +1,771 @@
+<html><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="keywords"/>
+<base href=""/>
+<title>Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/middle_sections.css" rel="stylesheet"/>
+<link href="assets/css/anim-effects.css" rel="stylesheet"/>
+<link href="assets/css/components/header-14.css" rel="stylesheet"/>
+<link href="assets/css/components/footer-11.css" rel="stylesheet"/>
+<link href="assets/css/bootstrap.css" rel="stylesheet"/>
+<link href="assets/css/plugins.css" rel="stylesheet"/>
+<link href="assets/css/custom-Imports.css" rel="stylesheet"/>
+<link href="assets/css/custom/editmode.css" rel="stylesheet"/>
+<link href="assets/css/resonsive.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet"/>
+<style>
+            :root {
+                --site-font: "Lato", sans-serif;
+            }
+            body, #wrapper, #wrapper * {
+                font-family: var(--site-font) !important;
+            }
+        </style>
+<style>
+
+.seo-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:999999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.seo-modal-box{
+    width:100%;
+    max-width:550px;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    font-family:'Quicksand', sans-serif;
+}
+
+.seo-modal-header{
+    padding:18px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #eee;
+}
+
+.seo-modal-header h3{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+}
+
+#closeSeoModal{
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.seo-modal-body{
+    padding:22px;
+}
+
+.seo-modal-body label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.seo-modal-body textarea,
+.seo-modal-body input{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:18px;
+    outline:none;
+}
+
+.seo-modal-body textarea{
+    height:120px;
+    resize:none;
+}
+
+.seo-modal-footer{
+    padding:18px 22px;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    border-top:1px solid #eee;
+}
+
+.seo-modal-footer button{
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    color: #FFF;
+  background: #3b3b3b;
+}
+
+#saveSeoUpdate{
+    background:linear-gradient(135deg,#e39a4e,#fb1b1b);
+    color:#fff;
+}
+
+</style>
+<style id="aiModalSpinnerStyles">
+        .ai-modal-content {
+            position: relative;
+        }
+
+        /* Overlay blocks everything */
+        .ai-modal-spinner {
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 20;
+            backdrop-filter: blur(1.5px);
+            pointer-events: auto; /* blocks modal */
+        }
+
+        /* Spinner itself should NOT intercept clicks */
+        .ai-modal-spinner * {
+            pointer-events: none;
+        }
+
+        /* Close button MUST be above overlay */
+        .ai-close {
+            align-self: flex-start;
+            margin-right: auto; /* push left */
+            margin-left: 0;
+            z-index: 30;
+        }
+
+
+        /* Spinner styling */
+        .ai-spinner {
+            width: 42px;
+            height: 42px;
+            border: 4px solid rgba(0,0,0,0.25);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: aiSpin 0.9s linear infinite;
+        }
+
+        @keyframes aiSpin {
+            to { transform: rotate(360deg); }
+        }
+
+    </style><style id="custom-alert-style">
+        .custom-alert-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 99997;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .custom-alert-backdrop.show {
+            opacity: 1;
+        }
+
+        .custom-alert-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%) scale(0.95);
+            opacity: 0;
+            z-index: 99998;
+            width: 100%;
+            max-width: 420px;
+            font-family: 'Quicksand', sans-serif;
+            transition: transform 0.35s ease, opacity 0.35s ease;
+            pointer-events: none;
+        }
+
+        .custom-alert-popup.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .custom-alert-content {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+            text-align: center;
+            padding: 30px 26px;
+        }
+
+        .custom-alert-message {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        .custom-alert-popup.success .custom-alert-message {
+            color: #28a745;
+        }
+
+        .custom-alert-popup.error .custom-alert-message {
+            color: #dc3545;
+        }
+
+        .custom-alert-ok-btn {
+            background: linear-gradient(135deg, #e39a4e, #fb1b1b);
+            color: #fff;
+            border: none;
+            padding: 10px 36px;
+            border-radius: 230px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .custom-alert-ok-btn:hover {
+            opacity: 0.9;
+        }
+
+        body.custom-alert-open {
+            overflow: hidden;
+        }
+    </style>
+<style>
+
+.seo-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:999999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.seo-modal-box{
+    width:100%;
+    max-width:550px;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    font-family:'Quicksand', sans-serif;
+}
+
+.seo-modal-header{
+    padding:18px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #eee;
+}
+
+.seo-modal-header h3{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+}
+
+#closeSeoModal{
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.seo-modal-body{
+    padding:22px;
+}
+
+.seo-modal-body label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.seo-modal-body textarea,
+.seo-modal-body input{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:18px;
+    outline:none;
+}
+
+.seo-modal-body textarea{
+    height:120px;
+    resize:none;
+}
+
+.seo-modal-footer{
+    padding:18px 22px;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    border-top:1px solid #eee;
+}
+
+.seo-modal-footer button{
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    color: #FFF;
+  background: #3b3b3b;
+}
+
+#saveSeoUpdate{
+    background:linear-gradient(135deg,#e39a4e,#fb1b1b);
+    color:#fff;
+}
+
+</style>
+<style>
+
+.seo-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:999999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.seo-modal-box{
+    width:100%;
+    max-width:550px;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    font-family:'Quicksand', sans-serif;
+}
+
+.seo-modal-header{
+    padding:18px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #eee;
+}
+
+.seo-modal-header h3{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+}
+
+#closeSeoModal{
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.seo-modal-body{
+    padding:22px;
+}
+
+.seo-modal-body label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.seo-modal-body textarea,
+.seo-modal-body input{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:18px;
+    outline:none;
+}
+
+.seo-modal-body textarea{
+    height:120px;
+    resize:none;
+}
+
+.seo-modal-footer{
+    padding:18px 22px;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    border-top:1px solid #eee;
+}
+
+.seo-modal-footer button{
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    color: #FFF;
+  background: #3b3b3b;
+}
+
+#saveSeoUpdate{
+    background:linear-gradient(135deg,#e39a4e,#fb1b1b);
+    color:#fff;
+}
+
+</style>
+<style>
+
+.seo-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:999999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.seo-modal-box{
+    width:100%;
+    max-width:550px;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    font-family:'Quicksand', sans-serif;
+}
+
+.seo-modal-header{
+    padding:18px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #eee;
+}
+
+.seo-modal-header h3{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+}
+
+#closeSeoModal{
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.seo-modal-body{
+    padding:22px;
+}
+
+.seo-modal-body label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.seo-modal-body textarea,
+.seo-modal-body input{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:18px;
+    outline:none;
+}
+
+.seo-modal-body textarea{
+    height:120px;
+    resize:none;
+}
+
+.seo-modal-footer{
+    padding:18px 22px;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    border-top:1px solid #eee;
+}
+
+.seo-modal-footer button{
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    color: #FFF;
+  background: #3b3b3b;
+}
+
+#saveSeoUpdate{
+    background:linear-gradient(135deg,#e39a4e,#fb1b1b);
+    color:#fff;
+}
+
+</style>
+</head>
+<body class="" style="">
+<div class="" id="wrapper" style="pointer-events: auto;">
+<div class="" data-src="header.html" id="header"></div>
+<div class="" id="mainPageContent">
+<div class="" id="middle_section_default" style="display: none;">
+<!-- ===== NORMAL MODE VIEW ===== -->
+<div class="default-view">
+<div class="processing-box">
+<h2 class="">This page is currently under development.<br class=""/> Please check back shortly.</h2>
+<p class="">Please Add Section from Editmode..</p>
+</div>
+</div>
+<div class="edit-view">
+<article class="container text-info-block">
+<div class="row">
+<div class="col-xs-12" style="text-align: center;">
+<h2 class="">Please add middle section</h2><br class=""/>
+<button class="custombtn" id="AddNewSection">Add Sections</button>
+</div>
+</div>
+</article>
+</div>
+</div><section class="about-56-section section-wrapper about-56" id="section-9p3zcsplbfb">
+<div class="container">
+<div class="row about-56-row">
+<!-- LEFT CONTENT -->
+<div class="col-md-6 col-sm-6 about-56-left">
+<span class="about-56-subtitle">
+                    Modern Architecture
+                </span>
+<h2 class="">
+                    CRAFTING ELEGANT<br class=""/>
+                    SPACES WITH<br class=""/>
+                    TIMELESS DESIGN
+                </h2>
+<p class="about-56-text">
+                    We combine innovation, creativity, and functionality to create
+                    architectural and interior experiences that inspire modern living.
+                    Every project is designed with precision, elegance, and attention
+                    to every detail.
+                </p>
+<ul class="list-unstyled about-56-list">
+<li class="">
+<i class="bi bi-check2"></i>
+                        Smart and innovative architectural planning
+                    </li>
+<li class="">
+<i class="bi bi-check2"></i>
+                        Premium luxury interior styling solutions
+                    </li>
+<li class="">
+<i class="bi bi-check2"></i>
+                        Functional spaces with timeless aesthetics
+                    </li>
+</ul>
+<a class="about-56-readmore" href="#" style="cursor: pointer;">
+                    Explore More
+                </a>
+</div>
+<!-- RIGHT IMAGE -->
+<div class="col-md-6 col-sm-6 about-56-img-wrap">
+<img alt="Modern Architecture" class="img-responsive updateImg" src="assets/images/about-56.jpg?v=1781264129"/>
+<div class="about-56-exp-box">
+<small class="">Years Of Experience</small>
+<h3 class="">15+</h3>
+</div>
+</div>
+</div>
+</div>
+</section><section class="section-wrapper ourteam-6" id="section-wdquubor78j">
+<div class="container ourteam-6-container">
+<div class="row">
+<!-- LEFT CONTENT -->
+<div class="col-md-5 col-sm-12 ourteam-6-lefttext">
+<p class="ourteam-6-subtitle">
+                    * OUR CREATIVE TEAM
+                </p>
+<h2 class="ourteam-6-title">
+                    We create inspiring
+                    architectural experiences
+                    that combine innovation,
+                    elegance, and modern living.....</h2>
+<p class="ourteam-6-description">
+                    Our talented designers and architects work together to craft
+                    premium spaces with timeless aesthetics, functionality, and
+                    attention to every detail.
+                </p>
+<button class="btn ourteam-6-btn">
+                    Meet Our Team
+                    <i class="bi bi-arrow-right"></i>
+</button>
+</div>
+<!-- TEAM -->
+<div class="col-md-7 col-sm-12 ourteam-6-images">
+<div class="row">
+<!-- MEMBER -->
+<div class="col-sm-4 col-xs-12 ourteam-6-profile">
+<div class="ourteam-6-card">
+<img alt="Team Member" class="img-responsive ourteam-6-img updateImg" src="assets/images/our-team-6-1.jpeg?v=1781264013?v=1781264044?v=1781264129"/>
+<div class="ourteam-6-content">
+<h4 class="ourteam-6-name">
+                                    Samar Verma
+                                </h4>
+<p class="ourteam-6-role">
+                                    Lead Architect
+                                </p>
+</div>
+</div>
+</div>
+<!-- MEMBER -->
+<div class="col-sm-4 col-xs-12 ourteam-6-profile">
+<div class="ourteam-6-card">
+<img alt="Team Member" class="img-responsive ourteam-6-img updateImg" src="assets/images/our-team-6-2.jpeg?v=1781264013?v=1781264044?v=1781264129"/>
+<div class="ourteam-6-content">
+<h4 class="ourteam-6-name">
+                                    Neha Chauhan
+                                </h4>
+<p class="ourteam-6-role">
+                                    Interior Designer
+                                </p>
+</div>
+</div>
+</div>
+<!-- MEMBER -->
+<div class="col-sm-4 col-xs-12 ourteam-6-profile">
+<div class="ourteam-6-card">
+<img alt="Team Member" class="img-responsive ourteam-6-img updateImg" src="assets/images/our-team-6-3.jpeg?v=1781264013?v=1781264044?v=1781264129"/>
+<div class="ourteam-6-content">
+<h4 class="ourteam-6-name">
+                                    Rohan Bedi
+                                </h4>
+<p class="ourteam-6-role">
+                                    Concept Planner
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="section-wrapper home-34" id="section-dzld3j4f7zq">
+<div class="container">
+<h2 class="home-34 section-title">Welcome to Your Real Estate Journey</h2>
+<p class="home-34 section-subtitle">Find the perfect home, buy your dream property, or sell with confidence</p>
+<div class="row">
+<div class="col-sm-6 col-md-4">
+<div class="home-34 card">
+<img alt="Find Rental Homes" class="updateImg" src="assets/images/home-34-1.jpg?v=1781264129"/>
+<h3 class="home-34 card-title">Find Rentals</h3>
+<p class="home-34 card-text">
+						Explore a wide range of rental properties, from modern apartments to family homes. Find a space
+						that fits your lifestyle and budget.
+					</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="home-34 card">
+<img alt="Buy a Home" class="updateImg" src="assets/images/home-34-2.jpg?v=1781264129"/>
+<h3 class="home-34 card-title">Buy a Home</h3>
+<p class="home-34 card-text">
+						Discover your dream home from our exclusive listings. Whether it’s your first home or an
+						investment property, we’ll help you find the perfect match.
+					</p>
+</div>
+</div>
+<div class="col-sm-6 col-md-4">
+<div class="home-34 card">
+<img alt="Sell Your Property" class="updateImg" src="assets/images/home-34-3.jpg?v=1781264129"/>
+<h3 class="home-34 card-title">Sell Your Property</h3>
+<p class="home-34 card-text">
+						Get the best value for your property with expert marketing and negotiation. List with us and
+						reach qualified buyers quickly and efficiently.
+					</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="" data-src="footer.html" id="footer"></div>
+</div>
+<a class="whatsapp-float" href="https://wa.me/" style="cursor: pointer;" target="_blank">
+<i class="ri-whatsapp-line"></i>
+</a>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/middle-section.js"></script>
+<script src="assets/js/init.js"></script>
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/jquery.main.js"></script>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/Observer.min.js"></script>
+<script src="assets/js/gsap.effects.js"></script>
+<script src="assets/js/common_js/send_email.js"></script>
+<script src="assets/js/common_js/html_image_editor.js"></script>
+<script src="assets/js/common_js/windows_postmessage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+                        $(function () {
+
+                            /* Start code to load js and css files properly on local server or production server: NOte: this is the workwround, need to fix this */
+                            loadHeaderFooter("header", "/media/projects/designpro/designpro/header.html");
+                            loadHeaderFooter("footer", "/media/projects/designpro/designpro/footer.html");
+                            /*  End code */
+
+
+                            /*  Start code to load js and css files properly on Githubpages  */
+                            loadHeaderFooter("header", "header.html");
+                            loadHeaderFooter("footer", "footer.html");
+                            /* End code */
+
+                            function getCurrentFile() {
+                                let file = new URLSearchParams(location.search).get("srcReq")
+                                    || location.pathname.split("/").pop()
+                                    || "index.html";
+
+                                if (!file.includes(".")) file += ".html";
+
+                                return file.toLowerCase();
+                            }
+
+                            function loadHeaderFooter(id, file) {
+                                $("#" + id).load(file, function (_, status) {
+                                    if (status === "error") return;
+                                    const targetid = $("#" + id);
+                                    targetid.find("a").addClass("edit-site");
+                                    if (id !== "header") return;
+                                    let current = getCurrentFile();
+
+                                    // Show / hide sections
+                                    targetid.find(".main-header-section").toggle(current === "index.html");
+                                    targetid.find(".header-breadcrumb-section").toggle(current !== "index.html");
+                                    // Match page name
+                                    let name = "";
+                                    targetid.find(".main-navigation a").each(function () {
+                                        let href = ($(this).attr("href") || "").split("/").pop().toLowerCase();
+                                        if (href === current) name = $(this).text().trim();
+                                    });
+
+                                    // Apply name (fallback safe)
+                                    targetid.find(".Page_name").text(
+                                        name || current.replace(".html", "").replace(/_/g, " ")
+                                    );
+                                });
+                            }
+
+                        });
+                    </script>
+<script src="assets/js/common_js/image_uploader.js"></script>
+<div class="scroll-arrow top" style="display: none;">⬆</div><div class="scroll-arrow bottom" style="display: none;">⬇</div>
+<div class="scroll-arrow top" style="display: none;">⬆</div><div class="scroll-arrow bottom" style="display: none;">⬇</div></body></html>
